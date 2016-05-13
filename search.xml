@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[码农的技术积累——如何快速搭建个人博客]]></title>
+      <url>http://lw394407679.github.io/2016/04/18/New-Post/</url>
+      <content type="html"><![CDATA[<h3 id="写在开头的话"><a href="#写在开头的话" class="headerlink" title="写在开头的话"></a>写在开头的话</h3><p>程序员，高大上的名字是工程师，接地气的名字是码农。作为码农中普普通通的一个，做着每天码砖的那些事，心里想着砌出万里长城，热爱技术，对新技术有强烈的好奇心。<br>技术博客，作为普通程序员向高级程序员进军的一个号角，不仅完美的诠释了开源共享的精神，而且平衡了程序员逻辑思维与语言表达能力。所以，新时代的码农们要用代码影响世界，更要用文字影响世界。<br>本文记录我搭建博客的过程，同时将经验分享给大家，相互帮助，相互学习。</p>
+<h3 id="相关技术"><a href="#相关技术" class="headerlink" title="相关技术"></a>相关技术</h3><p>本博客是一个静态博客，这种静态博客适合于个人博客。采用 Hexo + Github Pages 搭建而成。<br><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 是一个基于node.js的静态框架，其特点：简单、快速、强大。一条命令<code>hexo init</code>就搞定了。<br><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> —— <em>Websites for you and your projects. Hosted directly from your GitHub repository. Just edit, push, and your changes are live.</em><br>以上是官网的原话，简单来说就是一个免费的静态站点。<br>MarkDown 程序员写文档必备，语法简单。</p>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p>以下步骤是假定您已安装了node开发环境，对node有一定了解，熟悉git管理工具。本博客是在windows环境下安装的，所以配置node，git可能有点麻烦。</p>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><ol>
+<li><p>全局安装hexo：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blogName</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入blogName目录，启动本地测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>好了，您可以在<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 访问所搭建的博客</p>
+<h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><ol>
+<li>登陆GItHub，创建一个repository，进入如下界面：<br><img src="/images/githubpage.png" alt=""><br>Repository name 必须是: 自己用户名.github.io<br>比如我的就是：lw394407679.github.io<br>Description 任意写<br>选择Public<br><strong>点击</strong> Create repository</li>
+<li>完成上述步骤后，我们已经创建了一个repository，现在点击Settings，找到GitHub Pages点击Launch automatic page generator，再点击Continue to layouts 任意选择一个布局，点击Publish page。好了，在浏览器中访问 <a href="http://用户名.github.io" target="_blank" rel="external">http://用户名.github.io</a> </li>
+</ol>
+<h4 id="Hexo与Github-Pages结合"><a href="#Hexo与Github-Pages结合" class="headerlink" title="Hexo与Github Pages结合"></a>Hexo与Github Pages结合</h4><p>如何将之前利用Hexo搭建的本地博客发布到Gibhub上，需要通过如下操作：</p>
+<ol>
+<li><p>修改blogName目录下_config.yml文件中的deploy选项：(ssh方式)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:lw394407679/lw394407679.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令 <code>npm install hexo-deployer-git --save</code> 安装发布所需依赖</p>
+</li>
+<li>发布： 执行 <code>hexo generate deploy</code> 生成静态页面并发布到github上。然后再浏览器中访问 <a href="http://您的用户名.github.io" target="_blank" rel="external">http://您的用户名.github.io</a></li>
+</ol>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>通过上面步骤，我们已经完成了Hexo + GitHub Pages的搭建，现在你可以美化你的博客和写文章了。</p>
+<ul>
+<li>Hexo 提供了许多优美<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>，我们只需要选择自己喜欢的就行。</li>
+<li>新建文章：可以使用命令 <code>hexo new &quot;postName&quot;</code> 创建一个文章，也可以直接在source/_posts目录下创建一个md文件。</li>
+<li>多说评论框：在多说开发者中心申请一个站点，具体部署参考<a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">Hexo使用多说教程</a></li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>博客的基本框架都搭建好了，现在开始非凡的技术积累之旅吧。</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
