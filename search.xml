@@ -25,7 +25,7 @@
 <li>登陆GItHub，创建一个repository，进入如下界面：<br><img src="/images/githubpage.png" alt=""><br>Repository name 必须是: 自己用户名.github.io<br>比如我的就是：lw394407679.github.io<br>Description 任意写<br>选择Public<br><strong>点击</strong> Create repository</li>
 <li>完成上述步骤后，我们已经创建了一个repository，现在点击Settings，找到GitHub Pages点击Launch automatic page generator，再点击Continue to layouts 任意选择一个布局，点击Publish page。好了，在浏览器中访问 <a href="http://用户名.github.io" target="_blank" rel="external">http://用户名.github.io</a> </li>
 </ol>
-<h4 id="Hexo与Github-Pages结合"><a href="#Hexo与Github-Pages结合" class="headerlink" title="Hexo与Github Pages结合"></a>Hexo与Github Pages结合</h4><p>如何将之前利用Hexo搭建的本地博客发布到Gibhub上，需要通过如下操作：</p>
+<h4 id="Hexo与Github-Pages结合"><a href="#Hexo与Github-Pages结合" class="headerlink" title="Hexo与Github Pages结合"></a>Hexo与Github Pages结合</h4><p>如何将之前利用Hexo搭建的本地博客发布到GitHub上，需要通过如下操作：</p>
 <ol>
 <li><p>修改blogName目录下_config.yml文件中的deploy选项：(ssh方式)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:lw394407679/lw394407679.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
