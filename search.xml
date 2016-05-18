@@ -32,7 +32,7 @@
 </li>
 <li><p>执行命令 <code>npm install hexo-deployer-git --save</code> 安装发布所需依赖</p>
 </li>
-<li>发布： 执行 <code>hexo generate deploy</code> 生成静态页面并发布到github上。然后再浏览器中访问 <a href="http://您的用户名.github.io" target="_blank" rel="external">http://您的用户名.github.io</a></li>
+<li>发布： 执行 <code>hexo deploy</code> 生成静态页面并发布到github上。然后再浏览器中访问 <a href="http://您的用户名.github.io" target="_blank" rel="external">http://您的用户名.github.io</a></li>
 </ol>
 <h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>通过上面步骤，我们已经完成了Hexo + GitHub Pages的搭建，现在你可以美化你的博客和写文章了。</p>
 <ul>
